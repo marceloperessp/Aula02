@@ -7,7 +7,9 @@
 
 
 @using (Html.BeginForm())
+
 {
+
     <div class="form-group">
         @Html.LabelFor(c => c.nome)
         @Html.TextBoxFor(c => c.nome, new { placeholder = "Digite seu nome", @class = "form-control" })
@@ -20,20 +22,18 @@
         @Html.LabelFor(c => c.credito)
         @Html.TextBoxFor(c => c.credito, new { @class = "form-control" })
     </div>
-    <div class="form-group">
+    <div class="checkbox">
         @Html.LabelFor(c => c.NecessidadesEspeciais)
-        @Html.TextBoxFor(c => c.NecessidadesEspeciais, new { @class = "form-control" })
+        @Html.CheckBoxFor(c => c.NecessidadesEspeciais)
     </div>
-    <div class="form-group">
+    <div class="datepicker">
         @Html.LabelFor(c => c.Nascimento)
         @Html.TextBoxFor(c => c.Nascimento, new { @class = "form-control" })
     </div>
     <div class="form-group">
-
-
-
         <input type="submit" value="salvar" class="btn btn-primary" />
     </div>
+
 
     if (TempData["msg"] != null)
     {
