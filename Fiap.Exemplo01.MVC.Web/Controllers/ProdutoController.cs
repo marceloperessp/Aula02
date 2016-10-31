@@ -30,14 +30,17 @@ namespace Fiap.Exemplo01.MVC.Web.Controllers
             ViewBag.prod = produto;
             TempData["mensagem"] = "Produto cadastrado!";
             //retorna a view Sucesso.cshtml 
-            return View("Sucesso",produto);
+            //return View("Sucesso",produto);
             //return Content(produto.Nome + " " + produto.Quantidade + " " + produto.Valor);
+            return RedirectToAction("Cadastrar");
         }
+
 
         public ActionResult Sucesso()
         {
             return View();
         }
+
 
         [HttpGet]
         public ActionResult Listar()

@@ -1,26 +1,40 @@
-﻿
+﻿@model Fiap.Exemplo01.MVC.Web.Models.Produto
 @{
     ViewBag.Title = "Cadastrar";
 }
 
-<h2>Cadastrar</h2>
+<h2>Cadastro de Produto</h2>
 
-<!-- Nome , Valor , Quantidade-->
+@using (Html.BeginForm())
 
-<form method="post" action="/Produto/Cadastrar">
-    <div class="form-group">
-        <label for="nome">Nome do Produto:</label>
-        <input type="text" name="nome" id="idNome" class="form-control"/>
-    </div>
-    <div class="form-group">
-        <label>Valor:</label>
-        <input type="text" name="valor" id="idValor" class="form-control" />
-    </div>
-    <div class="form-group">
-        <label>Quantidade:</label>
-        <input type="text" name="quantidade" id="idQuantidade" class="form-control"/>
-    </div>
-    <div>
-        <input type="submit" value="Cadastrar" class="btn-primary"/>
-    </div>
-</form>
+{
+
+
+    <!-- Nome , Valor , Quantidade-->
+
+   // <form method="post" action="/Produto/Cadastrar">
+        <div class="form-group">
+            <label for="nome">Nome do Produto:</label>
+            <input type="text" name="nome" id="idNome" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label>Valor:</label>
+            <input type="text" name="valor" id="idValor" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label>Quantidade:</label>
+            <input type="text" name="quantidade" id="idQuantidade" class="form-control" />
+        </div>
+        <div>
+            <input type="submit" value="Cadastrar" class="btn btn-primary" />
+        </div>
+    //</form>
+
+    if (TempData["mensagem"] != null)
+    {
+        <div class="alert-success">
+            @TempData["mensagem"]
+        </div>
+    }
+
+}
