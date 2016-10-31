@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Collections;
 
 namespace Fiap.Exemplo01.MVC.Web.Controllers
 {
@@ -12,10 +13,13 @@ namespace Fiap.Exemplo01.MVC.Web.Controllers
 
         private static List<Cliente> _lista = new List<Cliente>();
 
+
         // GET: Cliente
         [HttpGet]
         public ActionResult Cadastrar()
         {
+
+            ViewBag.Estados = new SelectList(_lista, "Nome", "Estado Civil");
             return View();
         }
 
@@ -33,6 +37,9 @@ namespace Fiap.Exemplo01.MVC.Web.Controllers
             //ViewBag.lista = _lista;
             return View(_lista);
         }
+
+
+
 
     }
 }
